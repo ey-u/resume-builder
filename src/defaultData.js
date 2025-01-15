@@ -5,6 +5,7 @@ const defaultData = {
   location: "Southern Air Temple",
   education: [
     {
+      id: crypto.randomUUID(),
       school: "Air Acolyte Academy",
       location: "Southern Air Temple",
       gradDate: "2008-07",
@@ -13,6 +14,7 @@ const defaultData = {
   ],
   experience: [
     {
+      id: crypto.randomUUID(),
       position: "Avatar",
       company: "The Hundred Year War",
       location: "Earth",

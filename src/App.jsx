@@ -3,6 +3,7 @@ import "./App.css";
 import PersonalInfo from "./components/PersonalInfo";
 import Section from "./components/Section";
 import defaultData from "./defaultData";
+import Education from "./components/Education";
 
 export default function App() {
   const [resume, dispatch] = useReducer(resumeReducer, defaultData);
@@ -15,9 +16,20 @@ export default function App() {
     });
   }
 
-  // function handleEducationChange() {
+  function handleEducationChange(e, id) {
+    dispatch({
+      type: "updated_education",
+      id: id,
+      name: e.target.name,
+      value: e.target.value,
+    });
+  }
 
-  // }
+  function handleNewEducation() {
+    dispatch({
+      type: "added_education",
+    });
+  }
 
   // function handleExperienceChange() {
 
@@ -29,6 +41,19 @@ export default function App() {
       <Section initialToggle={true} title={"Personal Info"}>
         <PersonalInfo onChange={handlePersonalInfoChange} resume={resume} />
       </Section>
+      <Section initialToggle={true} title={"Education"}>
+        {resume.education.map((entry) => {
+          return (
+            <Education
+              key={entry.id}
+              onChange={handleEducationChange}
+              education={entry}
+              id={entry.id}
+            />
+          );
+        })}
+        <button onClick={handleNewEducation}>Add Education</button>
+      </Section>
     </>
   );
 }
@@ -39,6 +64,36 @@ function resumeReducer(resume, action) {
       return {
         ...resume,
         [action.name]: action.value,
+      };
+    }
+    case "updated_education": {
+      return {
+        ...resume,
+        education: resume.education.map((entry) => {
+          if (action.id === entry.id) {
+            return {
+              ...entry,
+              [action.name]: action.value,
+            };
+          } else {
+            return entry;
+          }
+        }),
+      };
+    }
+    case "added_education": {
+      return {
+        ...resume,
+        education: [
+          ...resume.education,
+          {
+            id: crypto.randomUUID(),
+            school: "",
+            location: "",
+            gradDate: "",
+            degree: "",
+          },
+        ],
       };
     }
     default: {
