@@ -20,7 +20,7 @@ const defaultData = {
       location: "Earth",
       startDate: "2005-02",
       endDate: "2008-07",
-      responsibilities:
+      summary:
         "Mastered all four elements, defeated Firelord Ozai, ended Hundred Year War",
     },
   ],
