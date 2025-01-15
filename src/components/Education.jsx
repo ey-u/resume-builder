@@ -1,4 +1,4 @@
-export default function Education({ onChange, education, id }) {
+export default function Education({ onChange, onDelete, education, id }) {
   return (
     <div>
       <form>
@@ -45,6 +45,10 @@ export default function Education({ onChange, education, id }) {
             onChange={(e) => onChange(e, id)}
           />
         </div>
+
+        <button type="button" onClick={() => onDelete(id)}>
+          Delete
+        </button>
       </form>
     </div>
   );

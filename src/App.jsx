@@ -31,6 +31,13 @@ export default function App() {
     });
   }
 
+  function handleDeletedEducation(id) {
+    dispatch({
+      type: "deleted_education",
+      id: id,
+    });
+  }
+
   // function handleExperienceChange() {
 
   // }
@@ -47,6 +54,7 @@ export default function App() {
             <Education
               key={entry.id}
               onChange={handleEducationChange}
+              onDelete={handleDeletedEducation}
               education={entry}
               id={entry.id}
             />
@@ -94,6 +102,12 @@ function resumeReducer(resume, action) {
             degree: "",
           },
         ],
+      };
+    }
+    case "deleted_education": {
+      return {
+        ...resume,
+        education: resume.education.filter((entry) => entry.id !== action.id),
       };
     }
     default: {
