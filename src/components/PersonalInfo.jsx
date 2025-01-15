@@ -1,8 +1,8 @@
 export default function PersonalInfo({ onChange, resume }) {
   return (
-    <div>
+    <div className="formContainer">
       <form>
-        <div>
+        <div className="formRow">
           <label htmlFor="name">Name</label>
           <input
             id="name"
@@ -14,7 +14,7 @@ export default function PersonalInfo({ onChange, resume }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="email">Email</label>
           <input
             id="email"
@@ -26,7 +26,7 @@ export default function PersonalInfo({ onChange, resume }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="phone">Phone Number</label>
           <input
             id="phone"
@@ -38,7 +38,7 @@ export default function PersonalInfo({ onChange, resume }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="location">Location</label>
           <input
             id="location"

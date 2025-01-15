@@ -9,9 +9,9 @@ export default function Section({ initialToggle, title, children }) {
   return (
     <div>
       <button onClick={() => toggleSection()}>
-        {title} {isOpen ? <span>&#9660;</span> : <span>&#9650;</span>}
+        <h2>{title}</h2> {isOpen ? <span>&#9660;</span> : <span>&#9650;</span>}
       </button>
-      {isOpen && <div className="form">{children}</div>}
+      {isOpen && <div className="sectionContainer">{children}</div>}
     </div>
   );
 }

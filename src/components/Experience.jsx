@@ -1,8 +1,8 @@
 export default function Experience({ onChange, onDelete, experience, id }) {
   return (
-    <div>
+    <div className="formContainer">
       <form>
-        <div>
+        <div className="formRow">
           <label htmlFor="position">Job Title</label>
           <input
             id="position"
@@ -13,7 +13,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="company">Company</label>
           <input
             id="company"
@@ -25,7 +25,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="location">Location</label>
           <input
             id="location"
@@ -36,7 +36,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="startDate">Start Date</label>
           <input
             id="startDate"
@@ -47,7 +47,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="endDate">End Date</label>
           <input
             id="endDate"
@@ -58,7 +58,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="summary">Summary</label>
           <textarea
             id="summary"
@@ -69,7 +69,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
           />
         </div>
 
-        <button type="button" onClick={() => onDelete(id)}>
+        <button className="delete" type="button" onClick={() => onDelete(id)}>
           Delete
         </button>
       </form>

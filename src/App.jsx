@@ -63,38 +63,46 @@ export default function App() {
 
   return (
     <>
-      <h1>Resume Builder</h1>
-      <Section initialToggle={true} title={"Personal Info"}>
-        <PersonalInfo onChange={handlePersonalInfoChange} resume={resume} />
-      </Section>
-      <Section initialToggle={false} title={"Education"}>
-        {resume.education.map((entry) => {
-          return (
-            <Education
-              key={entry.id}
-              onChange={handleEducationChange}
-              onDelete={handleDeletedEducation}
-              education={entry}
-              id={entry.id}
-            />
-          );
-        })}
-        <button onClick={handleNewEducation}>Add Education</button>
-      </Section>
-      <Section initialToggle={true} title={"Experience"}>
-        {resume.experience.map((entry) => {
-          return (
-            <Experience
-              key={entry.id}
-              onChange={handleExperienceChange}
-              onDelete={handleDeletedExperience}
-              experience={entry}
-              id={entry.id}
-            />
-          );
-        })}
-        <button onClick={handleNewExperience}>Add Experience</button>
-      </Section>
+      <div className="left">
+        <h1>Resume Builder</h1>
+        <div className="editingSection">
+          <Section initialToggle={true} title={"Personal Info"}>
+            <PersonalInfo onChange={handlePersonalInfoChange} resume={resume} />
+          </Section>
+          <Section initialToggle={false} title={"Education"}>
+            {resume.education.map((entry) => {
+              return (
+                <Education
+                  key={entry.id}
+                  onChange={handleEducationChange}
+                  onDelete={handleDeletedEducation}
+                  education={entry}
+                  id={entry.id}
+                />
+              );
+            })}
+            <button className="add" onClick={handleNewEducation}>
+              Add Education
+            </button>
+          </Section>
+          <Section initialToggle={true} title={"Experience"}>
+            {resume.experience.map((entry) => {
+              return (
+                <Experience
+                  key={entry.id}
+                  onChange={handleExperienceChange}
+                  onDelete={handleDeletedExperience}
+                  experience={entry}
+                  id={entry.id}
+                />
+              );
+            })}
+            <button className="add" onClick={handleNewExperience}>
+              Add Experience
+            </button>
+          </Section>
+        </div>
+      </div>
     </>
   );
 }

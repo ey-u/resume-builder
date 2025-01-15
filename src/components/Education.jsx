@@ -1,8 +1,8 @@
 export default function Education({ onChange, onDelete, education, id }) {
   return (
-    <div>
+    <div className="formContainer">
       <form>
-        <div>
+        <div className="formRow">
           <label htmlFor="school">School</label>
           <input
             id="school"
@@ -13,7 +13,7 @@ export default function Education({ onChange, onDelete, education, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="location">Location</label>
           <input
             id="location"
@@ -24,7 +24,7 @@ export default function Education({ onChange, onDelete, education, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="gradDate">Graduation Date</label>
           <input
             id="gradDate"
@@ -35,7 +35,7 @@ export default function Education({ onChange, onDelete, education, id }) {
           />
         </div>
 
-        <div>
+        <div className="formRow">
           <label htmlFor="degree">Degree</label>
           <input
             id="degree"
@@ -46,7 +46,7 @@ export default function Education({ onChange, onDelete, education, id }) {
           />
         </div>
 
-        <button type="button" onClick={() => onDelete(id)}>
+        <button className="delete" type="button" onClick={() => onDelete(id)}>
           Delete
         </button>
       </form>
