@@ -10,6 +10,7 @@ export default function PersonalInfo({ onChange, resume }) {
             type="text"
             value={resume.name}
             onChange={(e) => onChange(e)}
+            autoComplete="on"
           />
         </div>
 
@@ -21,6 +22,7 @@ export default function PersonalInfo({ onChange, resume }) {
             type="email"
             value={resume.email}
             onChange={(e) => onChange(e)}
+            autoComplete="on"
           />
         </div>
 
@@ -32,6 +34,7 @@ export default function PersonalInfo({ onChange, resume }) {
             type="text"
             value={resume.phone}
             onChange={(e) => onChange(e)}
+            autoComplete="on"
           />
         </div>
 
