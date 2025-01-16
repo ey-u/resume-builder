@@ -108,7 +108,7 @@ export default function App() {
             </Section>
           </div>
         </div>
-        <div className="right">
+        <div>
           <Resume resume={resume} />
         </div>
       </div>

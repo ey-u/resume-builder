@@ -11,16 +11,16 @@ export default function Resume({ resume }) {
           {email} | {phone} | {location}
         </p>
       </div>
-      <div className="resume-section">
+      <div>
         {education.length > 0 && (
           <h3>
             <u>EDUCATION</u>
           </h3>
         )}
-        <div className="section-entries">
+        <div className="resume-section">
           {education.map((school) => {
             return (
-              <div key={school.id} className="individual-entry">
+              <div key={school.id}>
                 <p className="split-line">
                   <span>
                     <em>{school.school}</em>, {school.location}
@@ -37,16 +37,16 @@ export default function Resume({ resume }) {
           })}
         </div>
       </div>
-      <div className="resume-section">
+      <div>
         {experience.length > 0 && (
           <h3>
             <u>WORK EXPERIENCE</u>
           </h3>
         )}
-        <div className="section-entries">
+        <div className="resume-section">
           {experience.map((work) => {
             return (
-              <div key={work.id} className="individual-entry">
+              <div key={work.id}>
                 <p className="split-line">
                   <span>
                     <b>{work.position}</b>, <em>{work.company}</em>,{" "}
