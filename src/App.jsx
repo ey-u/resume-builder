@@ -90,7 +90,7 @@ export default function App() {
                 Add Education
               </button>
             </Section>
-            <Section initialToggle={true} title={"Experience"}>
+            <Section initialToggle={false} title={"Experience"}>
               {resume.experience.map((entry) => {
                 return (
                   <Experience
