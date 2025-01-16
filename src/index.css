@@ -212,7 +212,8 @@ textarea {
 }
 
 textarea {
-  max-width: 240px;
+  /* max-width: 240px; */
+  /* max-width: 100%; */
 }
 
 /* RIGHT/RESUME SIDE */
