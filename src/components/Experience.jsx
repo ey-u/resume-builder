@@ -65,7 +65,7 @@ export default function Experience({ onChange, onDelete, experience, id }) {
             name="summary"
             value={experience.summary}
             onChange={(e) => onChange(e, id)}
-            placeholder="Please enter your responsibilities as a comma separated list"
+            placeholder="Please enter your responsibilities as a semicolon separated list"
           />
         </div>
 

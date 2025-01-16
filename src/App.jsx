@@ -5,6 +5,7 @@ import Section from "./components/Section";
 import defaultData from "./defaultData";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Resume from "./components/Resume";
 
 export default function App() {
   const [resume, dispatch] = useReducer(resumeReducer, defaultData);
@@ -63,44 +64,52 @@ export default function App() {
 
   return (
     <>
-      <div className="left">
-        <h1>Resume Builder</h1>
-        <div className="editingSection">
-          <Section initialToggle={true} title={"Personal Info"}>
-            <PersonalInfo onChange={handlePersonalInfoChange} resume={resume} />
-          </Section>
-          <Section initialToggle={false} title={"Education"}>
-            {resume.education.map((entry) => {
-              return (
-                <Education
-                  key={entry.id}
-                  onChange={handleEducationChange}
-                  onDelete={handleDeletedEducation}
-                  education={entry}
-                  id={entry.id}
-                />
-              );
-            })}
-            <button className="add" onClick={handleNewEducation}>
-              Add Education
-            </button>
-          </Section>
-          <Section initialToggle={true} title={"Experience"}>
-            {resume.experience.map((entry) => {
-              return (
-                <Experience
-                  key={entry.id}
-                  onChange={handleExperienceChange}
-                  onDelete={handleDeletedExperience}
-                  experience={entry}
-                  id={entry.id}
-                />
-              );
-            })}
-            <button className="add" onClick={handleNewExperience}>
-              Add Experience
-            </button>
-          </Section>
+      <div className="container">
+        <div className="left">
+          <h1>Resume Builder</h1>
+          <div className="editingSection">
+            <Section initialToggle={true} title={"Personal Info"}>
+              <PersonalInfo
+                onChange={handlePersonalInfoChange}
+                resume={resume}
+              />
+            </Section>
+            <Section initialToggle={false} title={"Education"}>
+              {resume.education.map((entry) => {
+                return (
+                  <Education
+                    key={entry.id}
+                    onChange={handleEducationChange}
+                    onDelete={handleDeletedEducation}
+                    education={entry}
+                    id={entry.id}
+                  />
+                );
+              })}
+              <button className="add" onClick={handleNewEducation}>
+                Add Education
+              </button>
+            </Section>
+            <Section initialToggle={true} title={"Experience"}>
+              {resume.experience.map((entry) => {
+                return (
+                  <Experience
+                    key={entry.id}
+                    onChange={handleExperienceChange}
+                    onDelete={handleDeletedExperience}
+                    experience={entry}
+                    id={entry.id}
+                  />
+                );
+              })}
+              <button className="add" onClick={handleNewExperience}>
+                Add Experience
+              </button>
+            </Section>
+          </div>
+        </div>
+        <div className="right">
+          <Resume resume={resume} />
         </div>
       </div>
     </>
@@ -139,7 +148,7 @@ function resumeReducer(resume, action) {
             id: crypto.randomUUID(),
             school: "",
             location: "",
-            gradDate: "",
+            gradDate: formatDate(new Date()),
             degree: "",
           },
         ],
@@ -176,8 +185,8 @@ function resumeReducer(resume, action) {
             position: "",
             company: "",
             location: "",
-            startDate: "",
-            endDate: "",
+            startDate: formatDate(new Date()),
+            endDate: formatDate(new Date()),
             summary: "",
           },
         ],
@@ -193,4 +202,10 @@ function resumeReducer(resume, action) {
       throw Error("Unknown action: " + action.type);
     }
   }
+}
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${year}-${month}`;
 }

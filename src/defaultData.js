@@ -21,7 +21,7 @@ const defaultData = {
       startDate: "2005-02",
       endDate: "2008-07",
       summary:
-        "Mastered all four elements, defeated Firelord Ozai, ended Hundred Year War",
+        "Mastered all four elements; Defeated Firelord Ozai; Ended Hundred Year War",
     },
   ],
 };

@@ -81,11 +81,14 @@ a:hover {
 }
 
 body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 3vw;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -153,6 +156,7 @@ button:focus-visible {
   }
 } */
 
+/* LEFT/EDITING SIDE */
 .left {
   padding: 20px 30px;
 }
@@ -196,4 +200,60 @@ textarea {
 
 textarea {
   max-width: 240px;
+}
+
+/* RIGHT/RESUME SIDE */
+.right {
+}
+
+.resume {
+  background-color: white;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  width: 210mm;
+  height: 297mm;
+  margin: 20px auto;
+  padding: 20mm;
+  line-height: 1.2;
+
+  display: flex;
+  flex-direction: column;
+  /* simulate a gap of 1 line on paper */
+  gap: 12pt;
+}
+
+.resume-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-section {
+}
+
+.section-entries {
+  display: flex;
+  flex-direction: column;
+  /* simulate a gap of 1 line on paper */
+  gap: 12pt;
+}
+
+.individual-entry {
+}
+
+.split-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume h2 {
+  font-size: 18pt;
+}
+
+.resume h3 {
+  font-size: 13pt;
+}
+
+.resume p {
+  font-size: 12pt;
 }
