@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import "./App.css";
 import PersonalInfo from "./components/PersonalInfo";
 import Section from "./components/Section";
 import defaultData from "./defaultData";
