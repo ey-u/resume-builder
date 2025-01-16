@@ -12,9 +12,11 @@ export default function Resume({ resume }) {
         </p>
       </div>
       <div className="resume-section">
-        <h3>
-          <u>EDUCATION</u>
-        </h3>
+        {education.length > 0 && (
+          <h3>
+            <u>EDUCATION</u>
+          </h3>
+        )}
         <div className="section-entries">
           {education.map((school) => {
             return (
@@ -36,9 +38,11 @@ export default function Resume({ resume }) {
         </div>
       </div>
       <div className="resume-section">
-        <h3>
-          <u>WORK EXPERIENCE</u>
-        </h3>
+        {experience.length > 0 && (
+          <h3>
+            <u>WORK EXPERIENCE</u>
+          </h3>
+        )}
         <div className="section-entries">
           {experience.map((work) => {
             return (
